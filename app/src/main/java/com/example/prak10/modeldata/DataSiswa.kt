@@ -19,6 +19,7 @@ data class UIStateSiswa(
 
 data class DetailSiswa (
     val id : Int = 0,
+    val nama: String = "",
 
 )
 
