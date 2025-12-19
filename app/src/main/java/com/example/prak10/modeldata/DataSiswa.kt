@@ -17,3 +17,11 @@ data class UIStateSiswa(
     val isEntryValid: Boolean = false
 )
 
+data class DetailSiswa (
+    val id : Int = 0,
+
+)
+
+
+
+
