@@ -7,6 +7,7 @@ import kotlin.Int
 @Serializable
 data class DataSiswa (
     val id : Int,
+    val nama: String,
 
 )
 
