@@ -2,8 +2,8 @@
 package com.example.prak10.repositori
 
 import android.app.Application
-import com.example.api.repositori.RepositoryDataSiswa
-import com.example.api.repositori.jaringanRepositoryDataSiswa
+import com.example.prak10.repositori.RepositoryDataSiswa
+import com.example.prak10.repositori.JaringanRepositoryDataSiswa
 import com.example.prak10.apiservice.ServiceApiSiswa
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -17,7 +17,7 @@ interface ContainerApp {
 }
 
 class DefaultContainerApp: ContainerApp {
-    private val baseurl = "http://10.0.2.2/umyTI/"
+    private val baseurl = "http://10.0.2.2:8080/umyTI/"
 
     val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
@@ -43,7 +43,7 @@ class DefaultContainerApp: ContainerApp {
     }
 
     override val repositoryDataSiswa: RepositoryDataSiswa by lazy {
-        jaringanRepositoryDataSiswa(retrofitService)
+        JaringanRepositoryDataSiswa(retrofitService)
     }
 }
 
