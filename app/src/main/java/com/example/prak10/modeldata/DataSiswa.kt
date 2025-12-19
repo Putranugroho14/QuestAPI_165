@@ -12,5 +12,8 @@ data class DataSiswa (
     val telpon: String
 )
 
+data class UIStateSiswa(
+    val detailSiswa: DetailSiswa = DetailSiswa(),
 
+)
 
