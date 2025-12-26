@@ -6,5 +6,5 @@ object DestinasiDetail : DestinasiNavigasi {
     override val route = "detail_siswa"
 
     const val ITEM_ID_ARG= "idSiswa"
-
+    val routeWithArgs = "$route/{$ITEM_ID_ARG}"
 }
