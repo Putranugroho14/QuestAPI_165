@@ -4,7 +4,5 @@ import com.example.prak10.R
 
 object DestinasiDetail : DestinasiNavigasi {
     override val route = "detail_siswa"
-    override val titleRes = R.string.detail_siswa
-    const val ITEM_ID_ARG= "idSiswa"
-    val routeWithArgs = "$route/{$ITEM_ID_ARG}"
+
 }
