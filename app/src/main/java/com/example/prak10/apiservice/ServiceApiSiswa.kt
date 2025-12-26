@@ -9,18 +9,20 @@ import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface ServiceApiSiswa {
-    @GET("bacaTeman.php")
+    @GET("bacateman.php")
     suspend fun getSiswa(): List<DataSiswa>
 
     @POST("insertTM.php")
-    suspend fun postSiswa(@Body dataSiswa: DataSiswa):retrofit2.Response<Void>
+    suspend fun postSiswa(@Body dataSiswa: DataSiswa): retrofit2.Response<Void>
 
-    //@GET("bacaTeman.php")
-    //suspend fun getSatuSiswa(@Query("id") id: Int): DataSiswa
+    // Hapus /{id}, gunakan Query saja
+    @GET("baca1Teman.php")
+    suspend fun getSatuSiswa(@Query("id") id: Int): DataSiswa
 
-    //@PUT("editTM.php/{id}")
-    //suspend fun editSatuSiswa(@Query("id") id: Int, @Body dataSiswa: DataSiswa):retrofit2.Response<Void>
+    // Untuk Update dan Delete, biasanya PHP script Anda menggunakan $_GET['id']
+    @PUT("editTM.php")
+    suspend fun editSatuSiswa(@Query("id") id: Int, @Body dataSiswa: DataSiswa): retrofit2.Response<Void>
 
-    //@DELETE("deleteTM.php/{id}")
-    //suspend fun hapusSatuSiswa(@Query("id") id: Int):retrofit2.Response<Void>
+    @DELETE("deleteTM.php")
+    suspend fun hapusSatuSiswa(@Query("id") id: Int): retrofit2.Response<Void>
 }
